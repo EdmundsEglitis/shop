@@ -12,4 +12,17 @@ class ProductController extends Controller
         //dd($products);
         return view("products", ["products" => $products]);
     }
+
+    public function create() {
+        return view("create");
+    }
+
+    public function store(Request $request, Product $product) {
+        $product->name=$request->name;
+        $product->description=$request->description;
+        $product->price=$request->price;
+        $product->imageURL=$request->imageURL;
+
+        $product->save();
+   }
 }

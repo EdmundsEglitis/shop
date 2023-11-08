@@ -1,0 +1,24 @@
+body {
+    background-color: pink;
+}
+
+form {
+    display: flex;
+    flex-direction:  column;
+    gap:20px ;
+    width: 500px;
+}
+input, textarea{
+    padding: 7px 10px;
+    border-radius: 0;
+    border: 2px solid purple;
+    background-color: rebeccapurple;
+    color: white;
+}
+button{
+    padding: 7px 15px;
+    background-color: rebeccapurple;
+    border:2px solid purple;
+    color: white;
+    cursor: pointer;
+}
