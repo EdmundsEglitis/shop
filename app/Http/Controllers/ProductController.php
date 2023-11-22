@@ -36,9 +36,19 @@ class ProductController extends Controller
         $fileName = time() . '_' . $image->getClientOriginalName();
         $image->move(public_path('images'), $fileName);
 
-        $product->imageURL = "./images/".$fileName;
+        $product->imageURL = "/images/".$fileName;
         //$product->imageURL=$request->imageURL;
 
         $product->save();
    }
+
+   public function show(Request $request, $id) {
+        $product = Product::find($id);
+        if ($product){
+            return view("products.show", ["product" => $product]);
+        }
+
+        return redirect("/products");
+   }
 }
+
