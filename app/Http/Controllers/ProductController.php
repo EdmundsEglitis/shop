@@ -50,5 +50,15 @@ class ProductController extends Controller
 
         return redirect("/products");
    }
+
+   public function edit($id){
+        $product = Product::find($id);
+        if ($product){
+            return view("products.edit", ["product" => $product]);
+        }
+
+        return redirect("/products");
+   }
+
 }
 
